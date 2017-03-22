@@ -1,0 +1,7 @@
+soft_group_companies_name:
+    resource: "@SoftGroupCompaniesBundle/Resources/config/routing/name.yml"
+    prefix:   /name
+
+soft_group_companies_homepage:
+    path:     /
+    defaults: { _controller: SoftGroupCompaniesBundle:Default:index }

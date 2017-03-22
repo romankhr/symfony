@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Name</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ name.id }}</td>
+            </tr>
+            <tr>
+                <th>Companiname</th>
+                <td>{{ name.companiName }}</td>
+            </tr>
+            <tr>
+                <th>Adres</th>
+                <td>{{ name.adres }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if name.date %}{{ name.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ name.description }}</td>
+            </tr>
+            <tr>
+                <th>Persons</th>
+                <td>{{ name.persons }}</td>
+            </tr>
+            <tr>
+                <th>Web</th>
+                <td>{{ name.web }}</td>
+            </tr>
+            <tr>
+                <th>Progects</th>
+                <td>{{ name.progects }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('name_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('name_edit', { 'id': name.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

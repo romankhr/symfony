@@ -1,0 +1,24 @@
+name_index:
+    path:     /
+    defaults: { _controller: "SoftGroupCompaniesBundle:Name:index" }
+    methods:  GET
+
+name_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoftGroupCompaniesBundle:Name:show" }
+    methods:  GET
+
+name_new:
+    path:     /new
+    defaults: { _controller: "SoftGroupCompaniesBundle:Name:new" }
+    methods:  [GET, POST]
+
+name_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoftGroupCompaniesBundle:Name:edit" }
+    methods:  [GET, POST]
+
+name_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoftGroupCompaniesBundle:Name:delete" }
+    methods:  DELETE

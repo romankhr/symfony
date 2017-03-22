@@ -1,0 +1,4 @@
+services:
+#    soft_group_companies.example:
+#        class: SoftGroup\CompaniesBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

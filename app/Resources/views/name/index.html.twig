@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Names list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Companiname</th>
+                <th>Adres</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Persons</th>
+                <th>Web</th>
+                <th>Progects</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for name in names %}
+            <tr>
+                <td><a href="{{ path('name_show', { 'id': name.id }) }}">{{ name.id }}</a></td>
+                <td>{{ name.companiName }}</td>
+                <td>{{ name.adres }}</td>
+                <td>{% if name.date %}{{ name.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ name.description }}</td>
+                <td>{{ name.persons }}</td>
+                <td>{{ name.web }}</td>
+                <td>{{ name.progects }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('name_show', { 'id': name.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('name_edit', { 'id': name.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('name_new') }}">Create a new name</a>
+        </li>
+    </ul>
+{% endblock %}
